@@ -32,9 +32,9 @@ const CatalogFilter = () => {
     }, []);
 
     const handleClick = async (id) => {
-            <Link to={`/detail/${id}`} title="Detail">
-                Click
-            </Link>
+            // <Link to={`/detail/${id}`} title="Detail">
+            //     Click
+            // </Link>
             console.log(id)
         try {
             const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
