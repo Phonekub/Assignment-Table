@@ -49,6 +49,16 @@ export default function Product() {
         }
     };
 
+    const onDelete = (id) => {
+        const confirmDelete = window.confirm("Delete ID : " + id);
+        if (confirmDelete) {
+            axios.delete("http://127.0.0.1:5000/products/" + id)
+                .then(response => {
+                    setProduct(response.data);
+                });
+        }
+    };
+
     const showProducts = product.map(item => (
         <tr key={item._id}>
             <td>{item._id}</td>
@@ -58,6 +68,9 @@ export default function Product() {
             <td>{item.type}</td>
             <td>{item.gender}</td>
             <td>{item.detail}</td>
+            <td>
+                <button className="delete" onClick={() => onDelete(item._id)}>Delete</button>&nbsp;&nbsp;
+            </td>
         </tr>
     ));
     
@@ -81,6 +94,7 @@ export default function Product() {
                         <td>Gender</td> 
                         <td>Detail</td> 
                         <td>Option</td> 
+
                     </tr>
                 </thead>
                 <tbody>{showProducts}</tbody>

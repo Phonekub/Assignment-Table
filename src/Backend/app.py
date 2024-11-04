@@ -65,6 +65,19 @@ def add_product():
     })
     return jsonify(pets_all),200
 
+@app.route("/products/<int:id>",methods=["DELETE"])
+def delete_product(id):
+    for o in pets_all:
+        if(o["_id"] == id):
+
+            print(o)
+            
+            pets_all.remove(o)
+            collection.delete_one({"_id":id})
+            
+            return jsonify(pets_all),200
+    return jsonify(pets_all),404
+
 @app.route('/123')
 def oak():
     return "Hello, dogg/123"
