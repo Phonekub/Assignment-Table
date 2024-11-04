@@ -13,7 +13,6 @@ const SettingsPopup = ({ onClose }) => {
             <div className="popup-content">
                 <h2>การตั้งค่า</h2>
                 <p>นี่คือเนื้อหาของการตั้งค่า</p>
-                <button onClick={onClose}>ปิด</button>
             </div>
         </div>
     );
