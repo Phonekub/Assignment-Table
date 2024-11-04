@@ -59,6 +59,36 @@ export default function Product() {
         }
     };
 
+    const onUpdate = (id) => {
+        const confirmUpdate = window.confirm("Replace ID : " + id);
+        if (confirmUpdate) {
+            const newData = {
+                name: myInputRef1.current.value || product.find(item => item._id === id).name,
+                price: myInputRef2.current.value || product.find(item => item._id === id).price,
+                img: myInputRef3.current.value || product.find(item => item._id === id).img,
+                type: myInputRef4.current.value || product.find(item => item._id === id).type,
+                detail: myInputRef5.current.value || product.find(item => item._id === id).detail,
+            };
+            const { name, price, img, type, detail } = newData;
+        
+            if (name !== "" && price !== "" && img !== "" && type !== "" && detail !== "") {
+                axios.put("http://127.0.0.1:5000/products/" + id, newData)
+                    .then(response => {
+                        setProduct(response.data);
+                    })
+                    .catch(error => {
+                        console.error('Error updating product:', error);
+                    });
+        
+                myInputRef1.current.value = "";
+                myInputRef2.current.value = "";
+                myInputRef3.current.value = "";
+                myInputRef4.current.value = "";
+                myInputRef5.current.value = "";
+            }
+        }
+    };
+
     const showProducts = product.map(item => (
         <tr key={item._id}>
             <td>{item._id}</td>
@@ -70,7 +100,8 @@ export default function Product() {
             <td>{item.detail}</td>
             <td>
                 <button className="delete" onClick={() => onDelete(item._id)}>Delete</button>&nbsp;&nbsp;
-            </td>
+                <button onClick={() => onUpdate(item._id)}>Replace</button>
+                </td>
         </tr>
     ));
     

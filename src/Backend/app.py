@@ -78,6 +78,28 @@ def delete_product(id):
             return jsonify(pets_all),200
     return jsonify(pets_all),404
 
+
+@app.route("/products/<int:id>",methods=["PUT"])
+def update_product(id):
+    data = request.get_json(pets_all)
+    for o in pets_all:
+        if(o["_id"] == id):
+            o.update(data)
+            collection.update_many(
+                {"_id":o["_id"]},
+                {"$set":{
+                        "name": data["name"] if data["name"] != "" else o["name"],
+                        "price": data["price"] if data["price"] != "" else o["price"],
+                        "img": data["img"] if data["img"] != "" else o["img"],
+                        "type": data["type"] if data["type"] != "" else o["type"],
+                        "gender": data["gender"] if data["gender"] != "" else o["gender"],
+                        "detail": data["detail"] if data["detail"] != "" else o["detail"],
+                    }
+                }
+            )
+            return jsonify(pets_all),200
+    return jsonify("Not found!!"),200
+
 @app.route('/123')
 def oak():
     return "Hello, dogg/123"
