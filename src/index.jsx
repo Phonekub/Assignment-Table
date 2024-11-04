@@ -9,7 +9,7 @@ import Menubar from './Menubar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
+    <PetShop/>
   </React.StrictMode>
 );
 
