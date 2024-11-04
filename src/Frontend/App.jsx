@@ -6,7 +6,7 @@ import Menubar from "./Menubar";
 // import Services from "./Services"; // แก้ไขเส้นทางถ้าจำเป็น
 // import Contact from "./Contact"; // แก้ไขเส้นทางถ้าจำเป็น
 // import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้า Cart
-import Settings from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
+import Settings from "./Fav"; // เพิ่มถ้าคุณมีหน้า Settings
 import Detail from "./Detail";
 
 
