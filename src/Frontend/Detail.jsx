@@ -1,42 +1,31 @@
-// import React from 'react';
-// import './Detail.css';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-// const Detail = ({ pet }) => {
-//   return (
-//     // <div className="pet-card">
-//     //   <img 
-//     //     src={pet.img} 
-//     //     alt={pet.name} 
-//     //     className="pet-card-image" 
-//     //   />
-//     //   <div className="pet-card-title">{pet.name}</div>
-//     //   <div className="pet-card-stars">★★★★★</div>
-//     //   <div className="pet-card-details">
-//     //     <div>
-//     //       <p>Age: {pet.age} years</p>
-//     //       <p>Gender: {pet.gender}</p>
-//     //       <p>Weight: {pet.weight} kg</p>
-//     //     </div>
-//     //     <div>
-//     //       <p>Pet price: {pet.price} Baht</p>
-//     //       <button className="pet-card-button">Purchase</button>
-//     //     </div>
-//     //   </div>
-//     // </div>
-//     <h1>From detail</h1>
-//   );
-// };
+const Detail = () => {
+    const { id } = useParams();
+    const pet = petDetail.find((p) => p.id === parseInt(id));
 
-// export default Detail;
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import './Backend.css';
+    if (!pet) {
+        return <h1>Pet not found</h1>;
+    }
 
-export default function Product() {
     return (
-        <div>
-            <h1>Hello from detail</h1>
+        <div className="pet-card">
+            <img src={pet.img} alt={pet.name} className="pet-card-image" />
+            <div className="pet-card-title">{pet.name}</div>
+            <div className="pet-card-stars">★★★★★</div>
+            <div className="pet-card-details">
+                <p>Age: {pet.age} years</p>
+                <p>Gender: {pet.gender}</p>
+                <p>Weight: {pet.weight} kg</p>
+                <p>Pet price: {pet.price} Baht</p>
+                <button className="pet-card-button">Purchase</button>
+            </div>
         </div>
     );
-}
+};
+
+export default Detail;
+
+
 
