@@ -9,6 +9,7 @@ export default function Product() {
     const myInputRef3 = React.createRef();
     const myInputRef4 = React.createRef();
     const myInputRef5 = React.createRef();
+    const myInputRef6 = React.createRef();
         
     useEffect(() => {
         console.log("request to api");
@@ -18,6 +19,35 @@ export default function Product() {
                 console.error('Error fetching data:', error);
             });
     }, []);
+    
+    const onAddProduct = () => {
+        const data = {
+            name: myInputRef1.current.value,
+            price: myInputRef2.current.value,
+            img: myInputRef3.current.value,
+            type: myInputRef4.current.value,
+            detail: myInputRef5.current.value,
+            gender: myInputRef6.current.value,
+        };
+        const names = myInputRef1.current.value;
+        const price = myInputRef2.current.value;
+        const img = myInputRef3.current.value;
+        const type = myInputRef4.current.value;
+        const detail = myInputRef5.current.value;
+        const gender = myInputRef6.current.value;
+        if (names !== "" && price !== "" && img !== "" && type !== "" && detail !== "" && gender !== "") {
+            axios.post("http://127.0.0.1:5000/products", data)
+                .then(response => {
+                    setProduct(response.data);
+                });
+            myInputRef1.current.value = "";
+            myInputRef2.current.value = "";
+            myInputRef3.current.value = "";
+            myInputRef4.current.value = "";
+            myInputRef5.current.value = "";
+            myInputRef6.current.value = "";
+        }
+    };
 
     const showProducts = product.map(item => (
         <tr key={item._id}>
@@ -33,6 +63,13 @@ export default function Product() {
     
     return (
         <div>
+            Product Name : <input type="text" name='product_name' ref={myInputRef1} /><br />
+            Price : <input type="text" name='product_price' ref={myInputRef2} /><br />
+            Link img : <input type="text" name='product_img' ref={myInputRef3} /><br />
+            Type : <input type="text" name='product_type' ref={myInputRef4} /><br />
+            Detail : <input type="text" name='product_detail' ref={myInputRef5} /><br />
+            Gender : <input type="text" name='product_gender' ref={myInputRef6} /><br />
+            <button onClick={onAddProduct}>Add</button>
             <table border='1'>
                 <thead>
                     <tr>
