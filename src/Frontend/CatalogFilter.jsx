@@ -55,18 +55,17 @@ const CatalogFilter = () => {
                 </button>
             </div>
 
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <div>
-                    {filteredItems.map(item => (
-                        <div key={item.id}>
-                            <h3>{item.name}</h3>
-                            <p>type: {item.type}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
+            <div className="type">
+                {filteredItems.map(item => (
+                    <div key={item.id} className="item-card">
+                        <h3>{item.name}</h3>
+                        <p>Type: {item.type}</p>
+                        {item.img && (
+                            <img src={item.img} alt={item.name} className="item-image" />
+                        )}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
