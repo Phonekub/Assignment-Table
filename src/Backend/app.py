@@ -7,11 +7,6 @@ client = MongoClient(uri)
 db = client["pets"]
 collection = db["pets"]
 
-pets = []
-check = []
-total = 0
-
-
 p_in_DB = collection.find()
 pets_all=[]
 for p in p_in_DB:
@@ -29,6 +24,13 @@ def home():
 @app.route("/products",methods=["GET"])
 def get_all_products():
     return jsonify(pets_all),200
+
+@app.route("/products/<int:id>",methods=["GET"])
+def get_one_product(id):
+    for o in pets_all:
+        if(o["_id"] == id):
+            return jsonify(o),200
+    return jsonify([]),404
 
 @app.route("/products",methods=["POST"])
 @cross_origin()
@@ -78,9 +80,27 @@ def delete_product(id):
             return jsonify(pets_all),200
     return jsonify(pets_all),404
 
-@app.route('/123')
-def oak():
-    return "Hello, dogg/123"
+@app.route("/products/<int:id>",methods=["PUT"])
+def update_product(id):
+    data = request.get_json(pets_all)
+    for o in pets_all:
+        if(o["_id"] == id):
+            o.update(data)
+            collection.update_many(
+                {"_id":o["_id"]},
+                {"$set":{
+                        "name": data["name"] if data["name"] != "" else o["name"],
+                        "price": data["price"] if data["price"] != "" else o["price"],
+                        "img": data["img"] if data["img"] != "" else o["img"],
+                        "type": data["type"] if data["type"] != "" else o["type"],
+                        "gender": data["gender"] if data["gender"] != "" else o["gender"],
+                        "detail": data["detail"] if data["detail"] != "" else o["detail"],
+                    }
+                }
+            )
+            return jsonify(pets_all),200
+    return jsonify("Not found!!"),200
+
 
 if __name__ == '__main__':
     app.run(debug=True)
