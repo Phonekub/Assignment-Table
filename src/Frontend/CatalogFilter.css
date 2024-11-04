@@ -45,9 +45,10 @@
 }
 
 .type {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     gap: 20px;
+    grid-template-columns: auto auto auto;
 }
 
 .item-card {
@@ -65,4 +66,22 @@
     border-radius: 8px;
     margin-top: 10px;
 }
+.selected-item-info {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.selected-item-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
 
