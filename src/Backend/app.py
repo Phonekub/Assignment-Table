@@ -7,11 +7,6 @@ client = MongoClient(uri)
 db = client["pets"]
 collection = db["pets"]
 
-pets = []
-check = []
-total = 0
-
-
 p_in_DB = collection.find()
 pets_all=[]
 for p in p_in_DB:
@@ -85,7 +80,6 @@ def delete_product(id):
             return jsonify(pets_all),200
     return jsonify(pets_all),404
 
-
 @app.route("/products/<int:id>",methods=["PUT"])
 def update_product(id):
     data = request.get_json(pets_all)
@@ -107,9 +101,6 @@ def update_product(id):
             return jsonify(pets_all),200
     return jsonify("Not found!!"),200
 
-@app.route('/123')
-def oak():
-    return "Hello, dogg/123"
 
 if __name__ == '__main__':
     app.run(debug=True)
