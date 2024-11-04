@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Menubar.css';
 import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import SettingsPopup from './Setting'; // นำเข้า SettingsPopup
+import Setting from './Setting'; // นำเข้า Setting
 
 
 const MenubarWithSearch = () => {
@@ -48,7 +48,7 @@ const MenubarWithSearch = () => {
                 </div>
                 
             </ul>
-                {showSettingsPopup && <SettingsPopup onClose={closeSettingsPopup} />} {/* แสดงป๊อปอัพ */}
+                {showSettingsPopup && <Setting onClose={closeSettingsPopup} />} {/* แสดงป๊อปอัพ */}
         </nav>
     );
 };
