@@ -7,7 +7,7 @@ import Menubar from "./Menubar";
 // import Contact from "./Contact"; // แก้ไขเส้นทางถ้าจำเป็น
 // import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้า Cart
 import Settings from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
-//import PetDetail from "./Detail";
+import Detail from "./Detail";
 
 // const petDetail = [
 //     { id: 0, name: "Corgi", price: 30000, age: 2, gender: "Male", weight: 20, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Pembroke_Corgi_Image_001.jpg/1280px-Pembroke_Corgi_Image_001.jpg" },
@@ -16,7 +16,7 @@ import Settings from "./Setting"; // เพิ่มถ้าคุณมีห�
 //     { id: 3, name: "Pug", price: 54000, age: 5, gender: "Male", weight: 14, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Fawn_pug_2.5year-old.JPG/1280px-Fawn_pug_2.5year-old.JPG" },
 //     { id: 4, name: "Syberian Husky", price: 99900, age: 5, gender: "Female", weight: 30, img: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Siberian-husky.jpg" },
 //     { id: 5, name: "Shiba", price: 46900, age: 3, gender: "Male", weight: 30, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Taka_Shiba.jpg/640px-Taka_Shiba.jpg" }
-//   ];
+// ];
 
 function App() {
     return (
@@ -29,6 +29,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/cart" element={<Cart />} /> */}
                 <Route path="/setting" element={<Settings />} />
+                <Route path="/detail" element={<Detail/>}/>
             </Routes>
         </Router>
         
