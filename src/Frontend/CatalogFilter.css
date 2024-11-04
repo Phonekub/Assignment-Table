@@ -6,12 +6,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
 }
 
 .catalog-title {
-    font-size: 1.5em;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -43,3 +43,26 @@
     background-color: #00cfff; /* สีฟ้าสำหรับปุ่มที่ถูกเลือก */
     color: white;
 }
+
+.type {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item-card {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.item-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
