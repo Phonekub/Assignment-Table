@@ -30,6 +30,13 @@ def home():
 def get_all_products():
     return jsonify(pets_all),200
 
+@app.route("/products/<int:id>",methods=["GET"])
+def get_one_product(id):
+    for o in pets_all:
+        if(o["_id"] == id):
+            return jsonify(o),200
+    return jsonify([]),404
+
 @app.route("/products",methods=["POST"])
 @cross_origin()
 def add_product():
