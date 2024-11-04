@@ -6,7 +6,7 @@ import Menubar from "./Menubar";
 // import Services from "./Services"; // แก้ไขเส้นทางถ้าจำเป็น
 // import Contact from "./Contact"; // แก้ไขเส้นทางถ้าจำเป็น
 import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้า Cart
-import Settings from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
+import Setting from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
 
 function App() {
     return (
@@ -18,7 +18,7 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} /> */}
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/settings" element={<Settings />} />
+                <Route path="/settings" element={<Setting />} />
             </Routes>
         </Router>
     );

@@ -1,12 +1,21 @@
 import React from 'react';
+import './Setting.css'; // สไตล์ของป๊อปอัพ
 
-const Settings = () => {
+
+const SettingsPopup = ({ onClose }) => {
+    const handleOverlayClick = (event) => {
+        if (event.target === event.currentTarget) {
+            onClose();
+        }
+    };
     return (
-        <div>
-            <h2>การตั้งค่า</h2>
-            <p>นี่คือหน้าการตั้งค่า</p>
+        <div className="popup-overlay" onClick={handleOverlayClick}>
+            <div className="popup-content">
+                <h2>การตั้งค่า</h2>
+                <p>นี่คือเนื้อหาของการตั้งค่า</p>
+                <button onClick={onClose}>ปิด</button>
+            </div>
         </div>
     );
 };
-
-export default Settings;
+export default SettingsPopup;

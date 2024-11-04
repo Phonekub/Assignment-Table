@@ -18,7 +18,7 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/cart" element={<Cart />} /> */}
-                <Route path="/settings" element={<Settings />} />
+                <Route path="/setting" element={<Settings />} />
             </Routes>
         </Router>
     );
