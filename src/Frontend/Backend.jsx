@@ -68,6 +68,7 @@ export default function Product() {
                 img: myInputRef3.current.value || product.find(item => item._id === id).img,
                 type: myInputRef4.current.value || product.find(item => item._id === id).type,
                 detail: myInputRef5.current.value || product.find(item => item._id === id).detail,
+                gender: myInputRef6.current.value || product.find(item => item._id === id).gender,
             };
             const { name, price, img, type, detail } = newData;
         
@@ -85,6 +86,7 @@ export default function Product() {
                 myInputRef3.current.value = "";
                 myInputRef4.current.value = "";
                 myInputRef5.current.value = "";
+                myInputRef6.current.value = "";
             }
         }
     };
