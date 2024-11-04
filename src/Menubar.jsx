@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Menubar.css';
+import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
@@ -28,7 +29,7 @@ const MenubarWithSearch = () => {
                 <button type="submit">Search</button>
             </form>
             <ul className="menu">
-                <li><a href="/home">Home</a></li>
+                <li><Link to="/home">Home</Link></li>
                 {/* <li><a href="/about">About</a></li> */}
                 {/* <li><a href="/services">Services</a></li> */}
                 {/* <li><a href="/contact">Contact</a></li> */}

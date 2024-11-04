@@ -1,29 +1,27 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Menubar from "./Menubar";
+// import Home from "./Home"; // แก้ไขให้ถูกต้อง
+// import About from "./About"; // ต้องตรวจสอบให้แน่ใจว่าใช้ไฟล์ที่ถูกต้อง
+// import Services from "./Services"; // แก้ไขเส้นทางถ้าจำเป็น
+// import Contact from "./Contact"; // แก้ไขเส้นทางถ้าจำเป็น
+// import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้า Cart
+import Settings from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Menubar />
+            <Routes>
+                {/* <Route path="/home" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/cart" element={<Cart />} /> */}
+                <Route path="/settings" element={<Settings />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
