@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Settings = () => {
+const addCart = () => {
     return (
         <div>
             <h2>Frome Cart</h2>
@@ -8,4 +8,4 @@ const Settings = () => {
     );
 };
 
-export default Settings;
+export default addCart;
