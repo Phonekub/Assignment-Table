@@ -4,6 +4,7 @@ import './index.css';
 import App from './Frontend/App';
 import reportWebVitals from './reportWebVitals';
 import PetShop from './Frontend/PetShop';
+import Backend from './Frontend/Backend';
 import Menubar from './Frontend/Menubar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

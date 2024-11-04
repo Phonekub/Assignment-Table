@@ -7,6 +7,7 @@ import Menubar from "./Menubar";
 // import Contact from "./Contact"; // แก้ไขเส้นทางถ้าจำเป็น
 import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้า Cart
 import Setting from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
+import Backend from "./Backend";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} /> */}
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/settings" element={<Setting />} />
+                <Route path="/backend" element={<Backend />} />
             </Routes>
         </Router>
     );
