@@ -34,8 +34,8 @@ const MenubarWithSearch = () => {
                 {/* <li><a href="/services">Services</a></li> */}
                 {/* <li><a href="/contact">Contact</a></li> */}
                 <div className="icons">
-                    <a href="/cart" title="Cart"><i className="fas fa-shopping-cart"></i></a>
-                    <a href="/settings" title="Settings"><i className="fas fa-cog"></i></a>
+                    <Link to="/cart" title="Cart"><i className="fas fa-shopping-cart"></i></Link>
+                    <Link to="/settings" title="Settings"><i className="fas fa-cog"></i></Link>
                 </div>
             </ul>
         </nav>

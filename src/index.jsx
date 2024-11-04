@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './Frontend/App';
 import reportWebVitals from './reportWebVitals';
-import PetShop from './PetShop';
-import Menubar from './Menubar';
+import PetShop from './Frontend/PetShop';
+import Menubar from './Frontend/Menubar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
