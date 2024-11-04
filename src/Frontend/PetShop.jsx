@@ -7,13 +7,14 @@ import Menubar from "./Menubar";
 // import Contact from "./Contact"; // แก้ไขเส้นทางถ้าจำเป็น
 import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้า Cart
 import Setting from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
+import Home from "./Home";
 
 function App() {
     return (
         <Router>
             <Menubar />
             <Routes>
-                {/* <Route path="/home" element={<Home />} /> */}
+                <Route path="/home" element={<Home />} />
                 {/* <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} /> */}
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/settings" element={<Setting />} />
             </Routes>
         </Router>
+
     );
 }
 
