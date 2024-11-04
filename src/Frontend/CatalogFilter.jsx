@@ -5,7 +5,6 @@ import './CatalogFilter.css';
 const CatalogFilter = () => {
     const [items, setItems] = useState([]);
     const [filter, setFilter] = useState('all');
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchItems = async () => {
@@ -21,6 +20,16 @@ const CatalogFilter = () => {
         
         fetchItems();
     }, []);
+
+    const handleClick = async (id) => {
+        try {
+            const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
+            setSelectedItem(response.data); // บันทึกข้อมูลของการ์ดที่กด
+            console.log(response.data); // ลองแสดงข้อมูลใน console
+        } catch (error) {
+            console.error("Error fetching item data:", error);
+        }
+    };
 
     const filteredItems = items.filter(item => filter === 'all' || item.type === filter);
 
@@ -57,7 +66,7 @@ const CatalogFilter = () => {
 
             <div className="type">
                 {filteredItems.map(item => (
-                    <div key={item.id} className="item-card">
+                    <div key={item._id} className="item-card" onClick={() => handleClick(item._id)}>
                         <h3>{item.name}</h3>
                         <p>Type: {item.type}</p>
                         {item.img && (
