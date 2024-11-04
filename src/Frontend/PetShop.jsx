@@ -9,6 +9,7 @@ import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้�
 import Setting from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
 import Backend from "./Backend";
 import Home from "./Home";
+import Detail from "./Detail";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/settings" element={<Setting />} />
                 <Route path="/backend" element={<Backend />} />
+                <Route path="/detail" element={<Detail />} />
             </Routes>
         </Router>
 
