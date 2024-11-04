@@ -33,7 +33,7 @@ const CatalogFilter = () => {
 
     const handleClick = async (id) => {
         try {
-            const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
+            const response = await axios.get(`http://127.0.0.1:5000/detail/${id}`);
             setSelectedItem(response.data); // บันทึกข้อมูลของการ์ดที่กด
             console.log(response.data); // ลองแสดงข้อมูลใน console
         } catch (error) {
