@@ -6,7 +6,7 @@ import Menubar from "./Menubar";
 // import Services from "./Services"; // แก้ไขเส้นทางถ้าจำเป็น
 // import Contact from "./Contact"; // แก้ไขเส้นทางถ้าจำเป็น
 import Cart from "./Cart"; // เพิ่มถ้าคุณมีหน้า Cart
-import Setting from "./Setting"; // เพิ่มถ้าคุณมีหน้า Settings
+import Fav from "./Fav"; // เพิ่มถ้าคุณมีหน้า Settings
 import Backend from "./Backend";
 import Home from "./Home";
 import Detail from "./Detail";
@@ -21,7 +21,7 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/contact" element={<Contact />} /> */}
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/settings" element={<Setting />} />
+                <Route path="/favs" element={<Fav />} />
                 <Route path="/backend" element={<Backend />} />
                 <Route path="/detail" element={<Detail />} />
             </Routes>
