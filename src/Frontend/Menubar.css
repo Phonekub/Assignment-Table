@@ -59,6 +59,7 @@
     color: white;
     cursor: pointer;
     margin-bottom: 6px;
+    width: 200px;
 
 }
 
@@ -89,9 +90,10 @@
 }
 
 .logo-image {
-    width: 40px; /* Set width of the image */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between image and text */
+    width: 120px; 
+    height: auto; 
+    margin-right: 10px; 
+    border-radius: 0; 
 }
 
 

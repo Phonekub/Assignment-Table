@@ -48,7 +48,6 @@ const CatalogFilter = () => {
 
     return (
         <div className="catalog-filter">
-                <h2 className="catalog-title">Categories</h2>
                 
                 <form className="search-form" onSubmit={handleSearchSubmit}>
                     <input 
@@ -58,10 +57,11 @@ const CatalogFilter = () => {
                         onChange={handleSearchChange}
                         className="search-form-input"
                     />
-                    <button type="submit" className="search-form-button">Reset</button>
+                    <button type="submit" className="search-form-button">Clear Search bar</button>
                 </form>
 
 
+                <h2 className="catalog-title">Categories</h2>
                 <div className="filter-buttons">
                     <button 
                         onClick={() => setFilter('all')} 
