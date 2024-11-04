@@ -4,7 +4,7 @@ import './Fav.css'; // สไตล์ของป๊อปอัพ
 const addFav = () => {
     return (
         <div>
-            <h2>Frome Fav</h2>
+            <h2>From Fav</h2>
         </div>
     );
 };
