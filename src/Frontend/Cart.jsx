@@ -64,12 +64,32 @@ const addCart = () => {
         .then(response => {
             setTotal(response.data);
         });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
     };
 
     const BuyOne = (id) => {
         axios.delete("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/" + id)
         .then(response => {
             setCart(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
         });
         axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
@@ -87,6 +107,18 @@ const addCart = () => {
         axios.delete("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart")
         .then(response => {
             setCart(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
         });
         axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
