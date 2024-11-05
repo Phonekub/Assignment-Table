@@ -17,7 +17,6 @@ const MenubarWithSearch = () => {
                         {/* <li><a href="/contact">Contact</a></li> */}
                         <div className="icons">
                             <Link to="/cart" title="Cart"><i className="fas fa-shopping-cart"></i></Link>
-                            <Link to="/favs" title="Fav"><i className="fas">❤️</i></Link>
                         </div>
                         
                     </ul>
