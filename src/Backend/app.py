@@ -155,16 +155,5 @@ def add_fav(id):
             return jsonify(fav),200
     return jsonify(fav),404
 
-# BUY
-
-@app.route("/pay", methods=["GET"])
-def total_price_and_clear_cart():
-    total = 0
-    tmp = cart
-    for o in tmp:
-        total = total + int(o["price"])
-    cart.clear()
-    return jsonify(total),200
-
 if __name__ == '__main__':
     app.run(debug=True)
