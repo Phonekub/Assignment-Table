@@ -5,17 +5,35 @@
   justify-content: center;
   text-align: center;
   padding: 20px;
+  margin-top: 20px;
+}
+.detail-rectangle{
+  background-color: #ffeed9; 
+  padding: 30px;
+  border-radius: 12px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.detail-name {
+  font-size: 54px;
+  font-weight: bold;
+  margin-bottom: 100px;
 }
 
 .detail-image {
   width: 300px;
   height: 300px;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .detail-info {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
@@ -24,6 +42,8 @@
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  justify-content: center;
+  
 }
 
 .detail-buttons button {
