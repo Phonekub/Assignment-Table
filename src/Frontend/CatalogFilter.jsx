@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CatalogFilter.css';
 import './Menubar.css';
+import { Link } from 'react-router-dom';
 
 const CatalogFilter = () => {
     const [items, setItems] = useState([]);
@@ -32,6 +33,7 @@ const CatalogFilter = () => {
     }, []);
 
     const handleClick = async (id) => {
+        console.log(id)
         try {
             const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
             setSelectedItem(response.data); // บันทึกข้อมูลของการ์ดที่กด
@@ -40,15 +42,14 @@ const CatalogFilter = () => {
             console.error("Error fetching item data:", error);
         }
     };
-
+    
     const filteredItems = items.filter(item => 
         (filter === 'all' || item.type === filter)&&
         (item.name.toLowerCase().includes(searchQuery.toLowerCase()) || item.type.toLowerCase().includes(searchQuery.toLowerCase()))
     );
-
+    
     return (
         <div className="catalog-filter">
-                <h2 className="catalog-title">Categories</h2>
                 
                 <form className="search-form" onSubmit={handleSearchSubmit}>
                     <input 
@@ -58,10 +59,11 @@ const CatalogFilter = () => {
                         onChange={handleSearchChange}
                         className="search-form-input"
                     />
-                    <button type="submit" className="search-form-button">Reset</button>
+                    <button type="submit" className="search-form-button">Clear Search bar</button>
                 </form>
 
 
+                <h2 className="catalog-title">Categories</h2>
                 <div className="filter-buttons">
                     <button 
                         onClick={() => setFilter('all')} 
@@ -100,6 +102,8 @@ const CatalogFilter = () => {
                                     <img src={item.img} alt={item.name} className="item-image" />   
                                 </Link>
                             )}
+
+
                         </div>
                     ))}
                 </div>
