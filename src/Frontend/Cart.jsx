@@ -84,7 +84,7 @@ const addCart = () => {
     };
 
     const BuyAll = () => {
-        axios.get("http://127.0.0.1:5000/pay")
+        axios.delete("http://127.0.0.1:5000/cart")
         .then(response => {
             setCart(response.data);
         });
@@ -95,10 +95,6 @@ const addCart = () => {
         axios.get("http://127.0.0.1:5000/cart/total")
         .then(response => {
             setTotal(response.data);
-        });
-        axios.get("http://127.0.0.1:5000/cart")
-        .then(response => {
-            setCart(response.data);
         });
         setShowPopup(false);
         setSelectedItem(null);
