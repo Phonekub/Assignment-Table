@@ -101,6 +101,33 @@ def update_product(id):
             return jsonify(pets_all),200
     return jsonify("Not found!!"),200
 
+cart = []
+
+@app.route("/cart", methods=["GET"])
+def get_cart():
+    return jsonify(pets_all),200
+
+@app.route("/cart/<int:id>", methods=["POST"])
+def add_cart(id):
+    for o in pets_all:
+        if(o["_id"] == id):
+            cart.append(o)
+            return jsonify(cart),200
+    return jsonify(cart),404
+
+@app.route("/cart/<int:id>", methods=["DELETE"])
+def delete_in_cart(id):
+    tmp = cart
+    for o in cart:
+        if(o["_id"] == id):
+            tmp.remove(o)
+            return jsonify(tmp),200
+    return jsonify(cart),404
+
+@app.route("/cart", methods=["DELETE"])
+def delete_all_cart():
+    cart.clear()
+    return jsonify(cart),200
 
 if __name__ == '__main__':
     app.run(debug=True)
