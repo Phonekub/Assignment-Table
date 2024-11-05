@@ -138,7 +138,7 @@ const addCart = () => {
                                 <h3 className='text_in_detail'>Price : </h3>
                                 <p>{item.price}</p>
 
-                                <button className='button_delete' onClick={() => onDelete(item._id)}>delete</button>
+                                <button className='button_delete' onClick={() => onDelete(item._id)}>Delete</button>
                                 <button className="buy-button" onClick={() => handleBuyClick(item)}>Buy</button>
                             </div>
     

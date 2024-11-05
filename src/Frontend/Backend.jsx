@@ -108,7 +108,7 @@ export default function Product() {
     ));
     
     return (
-        <div>
+        <div className="bgb">
             Product Name : <input type="text" name='product_name' ref={myInputRef1} /><br />
             Price : <input type="text" name='product_price' ref={myInputRef2} /><br />
             Link img : <input type="text" name='product_img' ref={myInputRef3} /><br />

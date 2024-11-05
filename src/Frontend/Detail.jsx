@@ -41,7 +41,6 @@ const Detail = () => {
                         <h2>{pet.name}</h2><br></br>
                         <img src={pet.img} alt={pet.name} className="detail-image" />
                         <p className="detail-info">Price: ${pet.price}</p>
-                        <p className="detail-info">Age: {pet.age} years</p>
                         <p className="detail-info">Gender: {pet.gender}</p>
                         <p className="detail-info">Detail: {pet.detail}</p>
         
