@@ -130,7 +130,7 @@ def delete_all_cart():
     return jsonify(cart),200
 
 
-@app.route("/cart/total", methods=["get"])
+@app.route("/cart/total", methods=["GET"])
 def total_price_cart():
     total = 0
     tmp = pets_all
