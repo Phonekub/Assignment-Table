@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './CatalogFilter.css';
+import './Cart.css';
 import { Link } from 'react-router-dom';
 
 const addCart = () => {
@@ -23,22 +23,28 @@ const addCart = () => {
     return (
         <div>
             <h2>Frome Cart</h2>
-            <div className="catalog-filter">
-                    {cart.map(item => (
-                        <div key={item._id} className="item-card" onClick={() => handleClick(item._id)}>
-                            <img src={item.img} alt={item.name} className="item-image" />   
-                            <h3>Name: {item.name}</h3>
-                            <p>Type: {item.type}</p>
-                            <p>Pric: {item.price}</p>
-                            {/* {item.img && ( */}
-                                {/* <Link to={`/detail/${item._id}`} title="Detail"> */}
-                                {/* </Link> */}
-                            {/* )} */}
-
+                
+                 {cart.map(item => (
+                        <div>
+                            <div key={item._id} className="card">
+                            
+                                    <img src={item.img} alt={item.name} className='img'  />
+                                    <div className="details">
+                                        <h3>Name :</h3>
+                                        <p>{item.name}</p>
+                                        <p className='space'></p>
+                                        <h3>Type : </h3>
+                                        <p>{item.type}</p>
+                                        <p className='space'></p>
+                                        <h3>Price : </h3>
+                                        <p>{item.price}</p>
+                                    </div>
+            
+                            </div>
 
                         </div>
                     ))}
-                </div>
+                    
         </div>
     );
 };

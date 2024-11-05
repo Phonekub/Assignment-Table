@@ -129,5 +129,15 @@ def delete_all_cart():
     cart.clear()
     return jsonify(cart),200
 
+
+@app.route("/cart/total", methods=["GET"])
+def total_price_cart():
+    total = 0
+    tmp = pets_all
+    for o in tmp:
+        total = total + int(o["price"])
+    cart.clear()
+    return jsonify(total),200
+
 if __name__ == '__main__':
     app.run(debug=True)
