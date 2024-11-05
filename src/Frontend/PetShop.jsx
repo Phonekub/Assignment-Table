@@ -32,12 +32,9 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/favs" element={<Fav />} />
                 <Route path="/backend" element={<Backend />} />
-<<<<<<< HEAD
                 <Route path="/detail/:id" element={<Detail />} />
-=======
-                {/* <Route path="/detail/id:" element={<Detail petDetail={petDetail}/>} /> */}
-                <Route path="/detail" element={<Detail />} />
->>>>>>> 367cb8312c3d9b2d0ee5b7776daf3771a1209a0b
+
+
             </Routes>
         </Router>
 

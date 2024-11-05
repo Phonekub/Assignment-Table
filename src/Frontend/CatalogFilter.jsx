@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CatalogFilter.css';
 import './Menubar.css';
+import { Link } from 'react-router-dom';
 
 const CatalogFilter = () => {
     const [items, setItems] = useState([]);
@@ -32,14 +33,14 @@ const CatalogFilter = () => {
     }, []);
 
     const handleClick = async (id) => {
-            // <Link to={`/detail/${id}`} title="Detail">
-            //     Click
-            // </Link>
-            console.log(id)
+        console.log(id)
         try {
             const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
             setSelectedItem(response.data); // บันทึกข้อมูลของการ์ดที่กด
             console.log(response.data); // ลองแสดงข้อมูลใน console
+                    <Link to={`/detail/${id}`} title="Detail">
+                        Click
+                    </Link>
         } catch (error) {
             console.error("Error fetching item data:", error);
         }
@@ -49,7 +50,7 @@ const CatalogFilter = () => {
         (filter === 'all' || item.type === filter)&&
         (item.name.toLowerCase().includes(searchQuery.toLowerCase()) || item.type.toLowerCase().includes(searchQuery.toLowerCase()))
     );
-
+    
     return (
         <div className="catalog-filter">
                 
@@ -102,6 +103,7 @@ const CatalogFilter = () => {
                             {item.img && (
                                 <img src={item.img} alt={item.name} className="item-image" />
                             )}
+
 
                         </div>
                     ))}
