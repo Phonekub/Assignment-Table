@@ -158,7 +158,7 @@ const addCart = () => {
                         {selectedItem.length === cart.length ? (
                             <div>
 
-                                <p>Are you sure you want to buy all items? <strong>{total} </strong></p>
+                                <p>Are you sure you want to buy all items? <strong className='t'>{total} </strong></p>
                                 <button onClick={closePopup}>Cancel</button>    
                                 <button onClick={BuyAll}>Confirm all</button>
 
@@ -167,7 +167,7 @@ const addCart = () => {
                         ) : (
                             <div>
 
-                                <p>Are you sure you want to buy <strong>{selectedItem.name}</strong> for {selectedItem.price}?</p>
+                                <p>Are you sure you want to buy <strong>{selectedItem.name}</strong> for <strong className='t'>{selectedItem.price}</strong> </p>
                                 <button onClick={closePopup}>Cancel</button>
                                 <button onClick={() => BuyOne(selectedItem._id)}>Confirm one</button>
 
