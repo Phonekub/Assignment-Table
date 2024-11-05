@@ -9,6 +9,7 @@ const CatalogFilter = () => {
     const [filter, setFilter] = useState('all');
     const [searchQuery, setSearchQuery] = useState(''); 
     const [selectedItem, setSelectedItem] = useState(null); 
+    
 
     const handleSearchChange = (event) => {
         setSearchQuery(event.target.value);
@@ -48,6 +49,8 @@ const CatalogFilter = () => {
         (item.name.toLowerCase().includes(searchQuery.toLowerCase()) || item.type.toLowerCase().includes(searchQuery.toLowerCase()))
     );
     
+
+
     return (
         <div className="catalog-filter">
                 
@@ -97,12 +100,9 @@ const CatalogFilter = () => {
                         <div key={item._id} className="item-card" onClick={() => handleClick(item._id)}>
                             <h3>{item.name}</h3>
                             <p>Type: {item.type}</p>
-                            {/* {item.img && ( */}
                                 <Link to={`/detail/${item._id}`} title="Detail">
                                     <img src={item.img} alt={item.name} className="item-image" />   
                                 </Link>
-                            {/* )} */}
-
 
                         </div>
                     ))}
