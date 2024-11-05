@@ -10,7 +10,9 @@ import Detail from "./Detail";
 function App() {
     return (
         <Router>
+
             <Menubar />
+
             <Routes>
                 <Route path="/home" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
