@@ -32,10 +32,6 @@ const CatalogFilter = () => {
     }, []);
 
     const handleClick = async (id) => {
-            <Link to={`/detail/${id}`} title="Detail">
-                Click
-            </Link>
-            console.log(id)
         try {
             const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
             setSelectedItem(response.data); // บันทึกข้อมูลของการ์ดที่กด
@@ -44,7 +40,7 @@ const CatalogFilter = () => {
             console.error("Error fetching item data:", error);
         }
     };
-    
+
     const filteredItems = items.filter(item => 
         (filter === 'all' || item.type === filter)&&
         (item.name.toLowerCase().includes(searchQuery.toLowerCase()) || item.type.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -52,6 +48,7 @@ const CatalogFilter = () => {
 
     return (
         <div className="catalog-filter">
+                <h2 className="catalog-title">Categories</h2>
                 
                 <form className="search-form" onSubmit={handleSearchSubmit}>
                     <input 
@@ -61,11 +58,10 @@ const CatalogFilter = () => {
                         onChange={handleSearchChange}
                         className="search-form-input"
                     />
-                    <button type="submit" className="search-form-button">Clear Search bar</button>
+                    <button type="submit" className="search-form-button">Reset</button>
                 </form>
 
 
-                <h2 className="catalog-title">Categories</h2>
                 <div className="filter-buttons">
                     <button 
                         onClick={() => setFilter('all')} 
@@ -102,7 +98,6 @@ const CatalogFilter = () => {
                             {item.img && (
                                 <img src={item.img} alt={item.name} className="item-image" />
                             )}
-
                         </div>
                     ))}
                 </div>
