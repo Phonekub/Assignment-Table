@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const addCart = () => {
 
     const [cart,setCart]=useState([]);
+    const [total,setTotal]=useState([]);
     
     useEffect(() => {
         const fetchItems = async () => {
@@ -19,6 +20,20 @@ const addCart = () => {
         
         fetchItems();
     }, []);
+
+    useEffect(() => {
+        const fetchItems = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:5000/cart/total');
+                setTotal(response.data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        
+        fetchItems();
+    }, []);
+
 
     return (
         <div>
@@ -44,6 +59,9 @@ const addCart = () => {
 
                         </div>
                     ))}
+                    <div className='cardtotal'>
+                        <h3 className='detailtotal'>Total: {total} BTH</h3>
+                    </div>
                     
         </div>
     );

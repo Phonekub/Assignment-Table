@@ -13,12 +13,35 @@
 
 
 }
+.cardtotal {
+    width: 90%; 
+    height: 75px;
+    margin-top: 40px;
+    margin-left: 100px;
+    display: flex; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(0, 0%, 87%);
+    border-radius: 8px;
+    background-color: #8d8989;
+    margin-bottom: 40px;
+
+
+
+}
 .details {
     display: flex; 
     justify-content: center;
     align-items: center;
     padding: 20px; 
     font-size: 20px;
+}
+.detailtotal {
+    display: flex; 
+    align-items: center;
+    padding: 20px; 
+    font-size: 40px;
+    text-align: right;
+    margin-left: 75%;
 }
 .space{
  margin: 9px;
