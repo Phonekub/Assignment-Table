@@ -97,11 +97,11 @@ const CatalogFilter = () => {
                         <div key={item._id} className="item-card" onClick={() => handleClick(item._id)}>
                             <h3>{item.name}</h3>
                             <p>Type: {item.type}</p>
-                            {item.img && (
+                            {/* {item.img && ( */}
                                 <Link to={`/detail/${item._id}`} title="Detail">
                                     <img src={item.img} alt={item.name} className="item-image" />   
                                 </Link>
-                            )}
+                            {/* )} */}
 
 
                         </div>
