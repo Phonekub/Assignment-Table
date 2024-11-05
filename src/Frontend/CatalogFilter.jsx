@@ -96,7 +96,9 @@ const CatalogFilter = () => {
                             <h3>{item.name}</h3>
                             <p>Type: {item.type}</p>
                             {item.img && (
-                                <img src={item.img} alt={item.name} className="item-image" />
+                                <Link to={`/detail/${item._id}`} title="Detail">
+                                    <img src={item.img} alt={item.name} className="item-image" />   
+                                </Link>
                             )}
                         </div>
                     ))}
