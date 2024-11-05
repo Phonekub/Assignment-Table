@@ -149,7 +149,11 @@ const addCart = () => {
             <div className='cardtotal'>
                 <h3 className='detailtotal'>Total: {total} BTH</h3>
             </div>
-            <button className="buy-all-button" onClick={handleBuyAllClick}>Buy All</button>
+            <div className='ball'>
+                <div></div>
+                <button className="button_buyall" onClick={handleBuyAllClick}>Buy All</button>
+                <div></div>
+            </div>
 
             {showPopup && (
                 <div className="popup">

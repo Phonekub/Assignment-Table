@@ -94,7 +94,7 @@ const CatalogFilter = () => {
                     </button>
                 </div>
                 
-
+                
                 <div className="type">
                     {filteredItems.map(item => (
                         <div key={item._id} className="item-card" onClick={() => handleClick(item._id)}>

@@ -82,7 +82,7 @@
     display: grid;
     margin-top: 1%;
     margin-bottom: -1%;
-    grid-template-columns: 71fr 75fr 700fr;
+    grid-template-columns: 5fr 10fr 75fr;
 }
 .buy-button {
     margin-top: 10px;
@@ -130,4 +130,19 @@
 }
 .t{
     font-size: 50px;
+}
+.ball{
+    display: grid;
+    margin-top: -1%;
+    margin-bottom: 1%;
+    grid-template-columns: 85fr 10fr 5fr ;
+}
+
+.button_buyall{
+    color: rgb(7, 7, 7);
+    background-color: rgb(11, 240, 106);
+    text-align: center;
+    align-items: center;
+    padding : 5px 5px;
+    font-size: 22px;
 }
