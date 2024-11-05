@@ -38,9 +38,6 @@ const CatalogFilter = () => {
             const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
             setSelectedItem(response.data); // บันทึกข้อมูลของการ์ดที่กด
             console.log(response.data); // ลองแสดงข้อมูลใน console
-                    <Link to={`/detail/${id}`} title="Detail">
-                        Click
-                    </Link>
         } catch (error) {
             console.error("Error fetching item data:", error);
         }
@@ -101,7 +98,9 @@ const CatalogFilter = () => {
                             <h3>{item.name}</h3>
                             <p>Type: {item.type}</p>
                             {item.img && (
-                                <img src={item.img} alt={item.name} className="item-image" />
+                                <Link to={`/detail/${item._id}`} title="Detail">
+                                    <img src={item.img} alt={item.name} className="item-image" />   
+                                </Link>
                             )}
 
 
