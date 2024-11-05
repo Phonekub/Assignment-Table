@@ -12,7 +12,7 @@ const Detail = () => {
         const fetchPet = async () => {
             if (id) { // If there's an ID, fetch the specific pet
                 try {
-                    const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
+                    const response = await axios.get(`https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/products/${id}`);
                     setPet(response.data);
                 } catch (error) {
                     console.error("Error fetching data:", error);
@@ -24,12 +24,12 @@ const Detail = () => {
     }, [id]);
 
     const handleAddToCart = async () => {
-            await axios.post(`http://127.0.0.1:5000/cart/${id}`);
+            await axios.post(`https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/${id}`);
             navigate("/home");
     };
 
     const handleBuy = async () => {
-            await axios.post(`http://127.0.0.1:5000/cart/${id}`);
+            await axios.post(`https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/${id}`);
             navigate("/cart");
     };
 
