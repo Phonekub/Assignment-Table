@@ -35,20 +35,33 @@ const addCart = () => {
     }, []);
 
     const onDelete = (id) => {
-        const confirmDelete = window.confirm("Delete ID : " + id);
-        if (confirmDelete) {
-            axios.delete("http://127.0.0.1:5000/cart/" + id)
-                .then(response => {
-                    setProduct(response.data);
-                });
-        }
+        axios.delete("http://127.0.0.1:5000/cart/" + id)
+        .then(response => {
+            setCart(response.data);
+        });
+        axios.get("http://127.0.0.1:5000/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("http://127.0.0.1:5000/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
     };
 
     const onDeleteAll = () => {
         axios.delete("http://127.0.0.1:5000/cart")
-            .then(response => {
-                setProduct(response.data);
-            });
+        .then(response => {
+            setCart(response.data);
+        });
+        axios.get("http://127.0.0.1:5000/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("http://127.0.0.1:5000/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
     };
 
     return (

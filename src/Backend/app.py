@@ -7,6 +7,8 @@ client = MongoClient(uri)
 db = client["pets"]
 collection = db["pets"]
 
+cart = []
+
 p_in_DB = collection.find()
 pets_all=[]
 for p in p_in_DB:
@@ -101,28 +103,27 @@ def update_product(id):
             return jsonify(pets_all),200
     return jsonify("Not found!!"),200
 
-cart = []
 
 @app.route("/cart", methods=["GET"])
 def get_cart():
-    # return jsonify(cart),200
-    return jsonify(pets_all),200
+    print(cart)
+    return jsonify(cart),200
 
 @app.route("/cart/<int:id>", methods=["POST"])
 def add_cart(id):
     for o in pets_all:
         if(o["_id"] == id):
             cart.append(o)
+            print(cart)
             return jsonify(cart),200
     return jsonify(cart),404
 
 @app.route("/cart/<int:id>", methods=["DELETE"])
 def delete_in_cart(id):
-    tmp = cart
     for o in cart:
         if(o["_id"] == id):
-            tmp.remove(o)
-            return jsonify(tmp),200
+            cart.remove(o)
+            return jsonify(cart),200
     return jsonify(cart),404
 
 @app.route("/cart", methods=["DELETE"])
@@ -133,10 +134,10 @@ def delete_all_cart():
 @app.route("/cart/total", methods=["GET"])
 def total_price_cart():
     total = 0
-    tmp = pets_all
+    tmp = cart
     for o in tmp:
         total = total + int(o["price"])
-    cart.clear()
+    # cart.clear()
     return jsonify(total),200
 
 fav = []
