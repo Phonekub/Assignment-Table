@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 const petDetail = [ 
     { id: 0, name: "Corgi", price: 30000, age: 2, gender: "Male", weight: 20, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Pembroke_Corgi_Image_001.jpg/1280px-Pembroke_Corgi_Image_001.jpg" },
     { id: 1, name: "Poodle", price: 50000, age: 4, gender: "Female", weight: 30, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Standard_poodle_apricot.jpg/1024px-Standard_poodle_apricot.jpg" },
