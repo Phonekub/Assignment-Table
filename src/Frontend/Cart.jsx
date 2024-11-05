@@ -28,7 +28,7 @@ const addCart = () => {
                         <div>
                             <div key={item._id} className="card">
                             
-                                    <img src={item.img} alt={item.name}  />
+                                    <img src={item.img} alt={item.name} className='img'  />
                                     <div className="details">
                                         <h3>Name :</h3>
                                         <p>{item.name}</p>
