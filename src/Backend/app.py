@@ -101,6 +101,11 @@ def update_product(id):
             return jsonify(pets_all),200
     return jsonify("Not found!!"),200
 
+cart = []
+
+@app.route("/cart", methods=["GET"])
+def get_order():
+    return jsonify(cart),200
 
 if __name__ == '__main__':
     app.run(debug=True)
