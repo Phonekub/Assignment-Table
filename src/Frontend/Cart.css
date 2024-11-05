@@ -1,10 +1,10 @@
 
 .card {
     width: 90%; 
-    height: 200px;
+    height: 240px;
     margin-top: 40px;
     margin-left: 100px;
-    display: flex; 
+    display: grid; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid hsl(0, 0%, 87%);
     border-radius: 8px;
@@ -29,7 +29,8 @@
 
 }
 .details {
-    display: flex; 
+    display: grid; 
+    grid-template-columns: 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 1fr;
     justify-content: center;
     align-items: center;
     padding: 20px; 
@@ -48,4 +49,38 @@
 }
 .img{
     margin-left: 20px;
+}
+
+.set_button_delete{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.button_delete{
+    color: white;
+    background-color: red;
+    text-align: center;
+    align-items: center;
+    padding : 50px 50px;
+    font-size: 50px;
+}
+
+.button_delete1{
+    color: white;
+    background-color: red;
+    text-align: center;
+    align-items: center;
+    padding : 5px 5px;
+    font-size: 22px;
+}
+
+.text_in_detail{
+    text-align: center;
+}
+
+.delete_all{
+    display: grid;
+    margin-top: 1%;
+    margin-bottom: -1%;
+    grid-template-columns: 71fr 75fr 700fr;
 }

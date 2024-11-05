@@ -105,6 +105,7 @@ cart = []
 
 @app.route("/cart", methods=["GET"])
 def get_cart():
+    # return jsonify(cart),200
     return jsonify(pets_all),200
 
 @app.route("/cart/<int:id>", methods=["POST"])
@@ -129,7 +130,6 @@ def delete_all_cart():
     cart.clear()
     return jsonify(cart),200
 
-
 @app.route("/cart/total", methods=["GET"])
 def total_price_cart():
     total = 0
@@ -138,6 +138,21 @@ def total_price_cart():
         total = total + int(o["price"])
     cart.clear()
     return jsonify(total),200
+
+fav = []
+
+@app.route("/fav", methods=["GET"])
+def get_fav():
+    # return jsonify(fav),200
+    return jsonify(pets_all),200
+
+@app.route("/fav/<int:id>", methods=["POST"])
+def add_fav(id):
+    for o in pets_all:
+        if(o["_id"] == id):
+            fav.append(o)
+            return jsonify(fav),200
+    return jsonify(fav),404
 
 if __name__ == '__main__':
     app.run(debug=True)
