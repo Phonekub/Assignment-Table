@@ -23,7 +23,7 @@ const CatalogFilter = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:5000/products');
+                const response = await axios.get('https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/products');
                 setItems(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
