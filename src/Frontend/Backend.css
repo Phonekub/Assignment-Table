@@ -47,3 +47,8 @@ button.delete {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.bgb{
+    background-color: rgb(186, 218, 203);
+    margin: 5%;
+}

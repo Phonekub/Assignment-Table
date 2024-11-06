@@ -13,7 +13,7 @@ const addCart = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:5000/cart');
+                const response = await axios.get('https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart');
                 setCart(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -26,7 +26,7 @@ const addCart = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:5000/cart/total');
+                const response = await axios.get('https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total');
                 setTotal(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -37,45 +37,65 @@ const addCart = () => {
     }, []);
 
     const onDelete = (id) => {
-        axios.delete("http://127.0.0.1:5000/cart/" + id)
+        axios.delete("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/" + id)
         .then(response => {
             setCart(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
     };
 
     const onDeleteAll = () => {
-        axios.delete("http://127.0.0.1:5000/cart")
+        axios.delete("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart")
         .then(response => {
             setCart(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
     };
 
     const BuyOne = (id) => {
-        axios.delete("http://127.0.0.1:5000/cart/" + id)
+        axios.delete("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/" + id)
         .then(response => {
             setCart(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
@@ -84,15 +104,27 @@ const addCart = () => {
     };
 
     const BuyAll = () => {
-        axios.delete("http://127.0.0.1:5000/cart")
+        axios.delete("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart")
         .then(response => {
             setCart(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
-        axios.get("http://127.0.0.1:5000/cart/total")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
+        .then(response => {
+            setTotal(response.data);
+        });
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/cart/total")
         .then(response => {
             setTotal(response.data);
         });
@@ -138,7 +170,7 @@ const addCart = () => {
                                 <h3 className='text_in_detail'>Price : </h3>
                                 <p>{item.price}</p>
 
-                                <button className='button_delete' onClick={() => onDelete(item._id)}>delete</button>
+                                <button className='button_delete' onClick={() => onDelete(item._id)}>Delete</button>
                                 <button className="buy-button" onClick={() => handleBuyClick(item)}>Buy</button>
                             </div>
     

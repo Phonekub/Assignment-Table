@@ -140,20 +140,5 @@ def total_price_cart():
     # cart.clear()
     return jsonify(total),200
 
-fav = []
-
-@app.route("/fav", methods=["GET"])
-def get_fav():
-    # return jsonify(fav),200
-    return jsonify(pets_all),200
-
-@app.route("/fav/<int:id>", methods=["POST"])
-def add_fav(id):
-    for o in pets_all:
-        if(o["_id"] == id):
-            fav.append(o)
-            return jsonify(fav),200
-    return jsonify(fav),404
-
 if __name__ == '__main__':
     app.run(debug=True)

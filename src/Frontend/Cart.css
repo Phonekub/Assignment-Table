@@ -30,7 +30,7 @@
 }
 .details {
     display: grid; 
-    grid-template-columns: 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 1fr;
+    grid-template-columns: 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr 20fr;
     justify-content: center;
     align-items: center;
     padding: 20px; 
@@ -56,14 +56,7 @@
     grid-template-columns: auto auto;
 }
 
-.button_delete{
-    color: white;
-    background-color: red;
-    text-align: center;
-    align-items: center;
-    padding : 50px 50px;
-    font-size: 50px;
-}
+
 
 .button_delete1{
     color: white;
@@ -72,6 +65,7 @@
     align-items: center;
     padding : 5px 5px;
     font-size: 22px;
+    transition: background-color 0.3s ease;
 }
 
 .text_in_detail{
@@ -84,14 +78,24 @@
     margin-bottom: -1%;
     grid-template-columns: 5fr 10fr 75fr;
 }
+.button_delete{
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 .buy-button {
     margin-top: 10px;
+    margin-left: 10px;
     padding: 8px 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 

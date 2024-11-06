@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './Frontend/App';
 import reportWebVitals from './reportWebVitals';
 import PetShop from './Frontend/PetShop';
 import Backend from './Frontend/Backend';

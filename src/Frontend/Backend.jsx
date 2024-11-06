@@ -13,7 +13,7 @@ export default function Product() {
         
     useEffect(() => {
         console.log("request to api");
-        axios.get("http://127.0.0.1:5000/products")
+        axios.get("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/products")
             .then(response => setProduct(response.data))
             .catch(error => {
                 console.error('Error fetching data:', error);
@@ -36,7 +36,7 @@ export default function Product() {
         const detail = myInputRef5.current.value;
         const gender = myInputRef6.current.value;
         if (names !== "" && price !== "" && img !== "" && type !== "" && detail !== "" && gender !== "") {
-            axios.post("http://127.0.0.1:5000/products", data)
+            axios.post("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/products", data)
                 .then(response => {
                     setProduct(response.data);
                 });
@@ -52,7 +52,7 @@ export default function Product() {
     const onDelete = (id) => {
         const confirmDelete = window.confirm("Delete ID : " + id);
         if (confirmDelete) {
-            axios.delete("http://127.0.0.1:5000/products/" + id)
+            axios.delete("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/products/" + id)
                 .then(response => {
                     setProduct(response.data);
                 });
@@ -73,7 +73,7 @@ export default function Product() {
             const { name, price, img, type, detail } = newData;
         
             if (name !== "" && price !== "" && img !== "" && type !== "" && detail !== "") {
-                axios.put("http://127.0.0.1:5000/products/" + id, newData)
+                axios.put("https://legendary-umbrella-5gq4gjrjw55rcvp9j-5000.app.github.dev/products/" + id, newData)
                     .then(response => {
                         setProduct(response.data);
                     })
@@ -108,7 +108,7 @@ export default function Product() {
     ));
     
     return (
-        <div>
+        <div className="bgb">
             Product Name : <input type="text" name='product_name' ref={myInputRef1} /><br />
             Price : <input type="text" name='product_price' ref={myInputRef2} /><br />
             Link img : <input type="text" name='product_img' ref={myInputRef3} /><br />
