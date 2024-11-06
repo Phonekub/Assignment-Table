@@ -4,13 +4,13 @@ import axios from 'axios';
 import "./Detail.css"
 
 const Detail = () => {
-    const { id } = useParams(); // Get the ID from the URL
-    const [pet, setPet] = useState(null); // State for the fetched pet data
+    const { id } = useParams();
+    const [pet, setPet] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchPet = async () => {
-            if (id) { // If there's an ID, fetch the specific pet
+            if (id) {
                 try {
                     const response = await axios.get(`http://127.0.0.1:5000/products/${id}`);
                     setPet(response.data);
